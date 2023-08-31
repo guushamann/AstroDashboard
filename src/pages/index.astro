@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+// import Weather from '../components/Weather.astro';
+import GridButton from '../components/GridButton.astro';
+
+import UrlList from '../components/UrlList.astro';
+import urls from '../json/urls.json';
+const gridData= urls.filter(d => d.grid);
+const listData= urls.filter(d => !d.grid);
+
+---
+
+
+<Layout title="GUSTAFSON">
+	<div class="mt-4 grid gap-4 justify-center">
+        <!-- <Weather /> -->
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 min-[2000px]:grid-cols-8 gap-4">
+          {gridData.map(buttonData => (
+            <GridButton url={buttonData.url} name={buttonData.name}  />
+          ))}
+
+
+        </div>
+
+      <input type="text" class="input w-full border border-slate-500 " id="search"  autofocus  placeholder="Search"  />
+	
+	  <UrlList listData={listData} />
+      <script>
+		function filterUrls(event)  {
+			//
+			if (event.key === "Enter") {
+				if (event.ctrlKey) {
+					window.location.assign(`https://stackoverflow.com/search?q=${event.target.value}`)
+			
+				}else{
+					window.location.assign(`https://www.google.nl/search?q=${event.target.value}`)
+					
+				}
+				
+			}
+			if (event.key === "Enter") {
+				if (event.altKey) {
+					window.location.assign(`https://www.reddit.com/search/?q=${event.target.value}`)
+					event.preventDefault()
+				}
+			}
+
+			const buttons = document.querySelectorAll('[data-list-button]');
+			buttons.forEach(button => {
+
+				if(!button.getAttribute('data-list-button').includes(event.target.value)){
+					button.style.display = "none"
+					// console.log(button.getAttribute('data-list-button'))		
+				}else{
+					button.style.display = "block"
+				}
+			})
+			
+		}
+		const search =document.getElementById("search")
+		search.addEventListener('keyup', (e) => filterUrls(e));
+	</script>
+    </div>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+
+</style>

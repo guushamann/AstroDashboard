@@ -1,0 +1,17 @@
+---
+interface Props {
+    url: string;
+    name: string;
+}
+const { url, name } = Astro.props;
+const websiteUrl = `window.open('//${url}')`;
+
+---
+
+<div
+    class="rounded-lg p-4 bg-slate-700 w-full grid grid-cols-2 cursor-pointer"
+    onclick={websiteUrl} data-list-button={name}
+>
+    <div class="link uppercase">{name}</div>
+    <div class="link truncate">{url}</div>
+</div>

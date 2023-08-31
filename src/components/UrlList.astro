@@ -1,0 +1,22 @@
+---
+import ListButton from '../components/ListButton.astro';
+export interface IlistData {
+    name: string;
+    url: string;
+    grid: boolean;
+}
+
+interface Props {
+    listData: IlistData[];
+
+}
+const { listData } = Astro.props;
+---
+<div class="grid gap-4  justify-start grid-cols-1">
+        
+    {listData.map(buttonData => (
+      <ListButton url={buttonData.url} name={buttonData.name}  />
+    ))}
+
+
+</div>

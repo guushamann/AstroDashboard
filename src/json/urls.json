@@ -128,7 +128,13 @@
         "url": "www.typescriptlang.org/docs/handbook/intro.html",
         "name": "typescript handbook",
         "grid": false
-    }
+    },
+    {
+        "url": "docs.astro.build/en/getting-started/",
+        "name": "astro handbook",
+        "grid": false
+    },
+    
 
 
 

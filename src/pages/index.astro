@@ -12,7 +12,10 @@ const listData= urls.filter(d => !d.grid);
 
 
 <Layout title="GUSTAFSON">
-	<div class="mt-4 grid gap-4 justify-center">
+	<div class="mt-4  justify-center">
+		<h1>GUSTAFSON</h1>
+	</div>
+	<div class=" grid gap-4 justify-center">
         <!-- <Weather /> -->
 
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 min-[2000px]:grid-cols-8 gap-4">
@@ -32,19 +35,24 @@ const listData= urls.filter(d => !d.grid);
 			if (event.key === "Enter") {
 				if (event.ctrlKey) {
 					window.location.assign(`https://stackoverflow.com/search?q=${event.target.value}`)
-			
-				}else{
-					window.location.assign(`https://www.google.nl/search?q=${event.target.value}`)
-					
+					return
 				}
-				
-			}
-			if (event.key === "Enter") {
 				if (event.altKey) {
 					window.location.assign(`https://www.reddit.com/search/?q=${event.target.value}`)
 					event.preventDefault()
+					return
 				}
+				
+				if(event.target.value.startsWith("https://") || event.target.value.startsWith("http://")){
+					window.location.assign(event.target.value)	
+					return
+				}
+
+				window.location.assign(`https://www.google.nl/search?q=${event.target.value}`)
+					
+				
 			}
+
 
 			const buttons = document.querySelectorAll('[data-list-button]');
 			buttons.forEach(button => {

@@ -5,12 +5,12 @@
   }
   const { url,name } = Astro.props;
 
-  const websiteUrl = `https://${url}`
-  const icoUrl = `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${url}&size=24`
 
+  const icoUrl = `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${url}&size=24`
+  const websiteUrl = `window.open('//${url}')`;
 
 ---
-<div class="flex rounded-lg  px-4 py-2 bg-slate-700 gap-4">
+<div class="flex rounded-lg  px-4 py-2 bg-slate-700 gap-4 cursor-pointer" onclick={websiteUrl}>
     <div class="grow-0 "><img height="24" width="24" src={icoUrl} /></div>
-    <div class="grow uppercase "><a href={websiteUrl} target="_blank">{name}</a></div>
+    <div class="grow uppercase">{name}</div>
   </div>

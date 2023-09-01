@@ -134,6 +134,11 @@
         "name": "astro handbook",
         "grid": false
     },
+    {
+        "url": "htmx.org/docs/",
+        "name": "htmx handbook",
+        "grid": false
+    }
     
 
 

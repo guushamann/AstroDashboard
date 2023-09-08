@@ -138,6 +138,16 @@
         "url": "htmx.org/docs/",
         "name": "htmx handbook",
         "grid": false
+    },
+    {
+        "url": "https://dev.azure.com/enecomanagedcloud/eMobility/_wiki/wikis/eMobility.wiki/1113/eMobility-General",
+        "name": "eneco devops",
+        "grid": true
+    },
+    {
+        "url": "https://dev.azure.com/enecomanagedcloud/eMobility/_wiki/wikis/eMobility.wiki/1113/eMobility-General",
+        "name": "eneco devops",
+        "grid": true
     }
     
 

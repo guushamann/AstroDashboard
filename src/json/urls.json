@@ -140,13 +140,28 @@
         "grid": false
     },
     {
-        "url": "https://dev.azure.com/enecomanagedcloud/eMobility/_wiki/wikis/eMobility.wiki/1113/eMobility-General",
+        "url": "dev.azure.com/enecomanagedcloud/eMobility/_wiki/wikis/eMobility.wiki/1113/eMobility-General",
         "name": "eneco devops",
         "grid": false
     },
     {
-        "url": "https://dev.azure.com/enecomanagedcloud/eMobility/_wiki/wikis/eMobility.wiki/1113/eMobility-General",
-        "name": "eneco devops",
+        "url": "tst.my.eneco-emobility.com/",
+        "name": "eneco mobility test",
+        "grid": false
+    },
+    {
+        "url": "acc.my.eneco-emobility.com/",
+        "name": "eneco mobility acceptence",
+        "grid": false
+    },
+    {
+        "url": "eneco-emobility-tst.crm4.dynamics.com/",
+        "name": "eneco mobility dynamics test",
+        "grid": false
+    },
+    {
+        "url": "eneco-emobility-acc.crm4.dynamics.com/",
+        "name": "eneco mobility dynamics acceptence",
         "grid": false
     }
     

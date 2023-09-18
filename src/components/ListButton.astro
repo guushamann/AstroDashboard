@@ -4,7 +4,7 @@ interface Props {
     name: string;
 }
 const { url, name } = Astro.props;
-const websiteUrl = `window.open('//${url}')`;
+const websiteUrl = `window.location.href='//${url}'`;
 
 ---
 
